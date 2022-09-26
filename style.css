@@ -145,15 +145,14 @@ header .container {
 .bottom-tema {
     display: inline-block;
     border: none;
-   
+    background: var(--darkTwo);
+    color: var(--backgroundColor);
     outline: none;
     cursor: pointer;
     height: 39px;
     width: 39px;
     border-radius: 50%;
     font-size: 1.1rem;
-    margin-left: 24px;
-    
 } 
 
 .bottom-tema i {
