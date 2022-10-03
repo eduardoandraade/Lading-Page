@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-:root {
+.light {
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
     --backgroundColor: #f1f8fc;
     --darkOne: #312f3a;
     --darkTwo: #45424b;
     --lightOne: #919191;
-    --LightTwo: #aaa;
+    --lightTwo: #aaa;
+}
+
+.dark {
+    --mainColor: #64bcf4;
+    --hoverColor: #5bacdf;
+    --backgroundColor: #192e3a;
+    --darkOne: #f3f3f3;
+    --darkTwo: #fff;
+    --lightOne: #ccc;
+    --lightTwo: #e7e3e3;
+
 }
 
 *, 
@@ -139,10 +150,10 @@ header .container {
 }
 
 .img-produto {
-    width: 90%;
+    width: 90%; 
 }
     
-.bottom-tema {
+.botão-alterar-tema {
     display: inline-block;
     border: none;
     background: var(--darkTwo);
@@ -153,13 +164,39 @@ header .container {
     width: 39px;
     border-radius: 50%;
     font-size: 1.1rem;
-} 
+    transition: 0.3s;
+    
+}
 
-.bottom-tema i {
+.botão-alterar-tema i {
     line-height: 39px;
 }
 
-.bottom-tema i:last-child {
-    display: none;
+.botão-alterar-tema:hover {
+    background: var(--mainColor);
+}
 
+.container-pai.light .botão-alterar-tema i:last-child {
+    display: none;
+}
+
+.container-pai.light .botão-alterar-tema i:first-child {
+    display: block;
+}
+
+.container-pai.dark .botão-alterar-tema i:last-child {
+    display: block;
+}
+
+.container-pai.dark .botão-alterar-tema i:first-child {
+    display: none;
+}
+
+.fundo-icon {
+    position: absolute;
+    z-index: 0;
+    width: 500px;
+    bottom: -180px;
+    left: -15px;
+    opacity: 0.3;
 }
