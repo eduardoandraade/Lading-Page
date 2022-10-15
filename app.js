@@ -46,7 +46,7 @@ function alterarTema() {
 
 function events() {
     botão_alterar_tema.addEventListener("click", alterarTema);
-    empresa-bar-menu.addEventListener("click", () => {
+    empresa_bar_menu.addEventListener("click", () => {
         container_pai.classList.toggle("active");
     });
 }

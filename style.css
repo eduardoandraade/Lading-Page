@@ -67,6 +67,11 @@ a {
     z-index: 10;
 }
 
+header {
+    position: relative;
+    z-index: 70;
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
@@ -90,10 +95,6 @@ header .container {
     font-size: 1.55rem;
     line-height: 1.2;
     font-weight: 700;
-}
-
-.links{
-    display: none;
 }
 
 .links ul {
@@ -130,13 +131,15 @@ header .container {
 }
 
 .empresa-bar-menu {
+    position: relative;
+    z-index: 99;
     width: 2rem;
     height: 2rem;
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    display: none;
 
 }
 
@@ -144,7 +147,9 @@ header .container {
     position: relative;
     width: 100%;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--darkTwo);
+    border-radius: 3px;
+    transition: ,5s;
 }
 
 .bar::before, 
@@ -153,8 +158,9 @@ header .container {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--darkTwo);
     border-radius: 3px;
+    transition: .5s;
 }
 
 .bar::before{
@@ -163,6 +169,18 @@ header .container {
 .bar::after{
     transform: translateY(8px);
 }
+
+.container-pai.active .empresa-bar-menu .bar {
+    background-color: transparent;
+}
+
+.container-pai.active .bar::before {
+    transform: translateY(0) rotate(-45deg);
+}
+.container-pai.active .bar::after {
+    transform: translateY(0) rotate(45deg);
+}
+
 .vitrine .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -272,5 +290,30 @@ header .container {
     .img-produto {
         width: 100%;
         transform: none;
+    }
+
+    .empresa-bar-menu {
+        display: flex;
+    }
+    
+    .links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        max-width: 450px;
+        height: 100%;
+        background-color: var(--mainColor);
+        z-index: 95;
+        display: flex;
+    }
+
+    .links ul {
+        flex-direction: column;
+    }
+
+    .links a {
+        color: #FFF;
+        margin-left: 0;
+        padding: 2rem 0;
     }
 }
