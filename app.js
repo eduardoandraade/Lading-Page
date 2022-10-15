@@ -1,10 +1,13 @@
 // select The Elements
 var botão_alterar_tema;
 var container_pai;
+var empresa_bar_menu;
+
 
 function declare(){
     botão_alterar_tema = document.querySelector(".botão-alterar-tema");
     container_pai = document.querySelector(".container-pai");
+    empresa_bar_menu = document.querySelector(".empresa-bar-menu");
 }
 
 const main = document.querySelector("main");
@@ -43,6 +46,9 @@ function alterarTema() {
 
 function events() {
     botão_alterar_tema.addEventListener("click", alterarTema);
+    empresa-bar-menu.addEventListener("click", () => {
+        container_pai.classList.toggle("active");
+    });
 }
 
 events();

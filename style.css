@@ -92,6 +92,10 @@ header .container {
     font-weight: 700;
 }
 
+.links{
+    display: none;
+}
+
 .links ul {
     display: flex;
     list-style: none;
@@ -125,6 +129,40 @@ header .container {
     transform: scale(1) !important;
 }
 
+.empresa-bar-menu {
+    width: 2rem;
+    height: 2rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.empresa-bar-menu .bar {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
+
+.bar::before, 
+.bar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.bar::before{
+    transform: translateY(-8px);
+}
+.bar::after{
+    transform: translateY(8px);
+}
 .vitrine .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -222,5 +260,17 @@ header .container {
     }
     100%{
         clip-path: circle(150% at 0 0);
+    }
+}
+
+
+@media screen and (max-width: 870px) {
+    .vitrine .container {
+        grid-template-columns: 1fr;
+    }
+
+    .img-produto {
+        width: 100%;
+        transform: none;
     }
 }
