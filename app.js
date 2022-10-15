@@ -3,8 +3,8 @@ var botão_alterar_tema;
 var container_pai;
 
 function declare(){
-    var botão_alterar_tema = document.querySelector(".botão-alterar-tema");
-    var container_pai = document.querySelector(".container-pai");
+    botão_alterar_tema = document.querySelector(".botão-alterar-tema");
+    container_pai = document.querySelector(".container-pai");
 }
 
 const main = document.querySelector("main");
@@ -28,17 +28,21 @@ function alterarTema() {
     clone.classList.add("copy");
     main.appendChild(clone);
 
+    document.body.classList.add("stop-scolling");
+
     clone.addEventListener("animationend", () => {
+        document.body.classList.remove("stop-scolling");
         container_pai.remove();
         clone.classList.remove("copy");
         // Reset Variables
         declare();
-        
+        events();
     });
 
 }
 
+function events() {
+    botão_alterar_tema.addEventListener("click", alterarTema);
+}
 
-botão_alterar_tema.addEventListener("click", alterarTema);
-
-
+events();
